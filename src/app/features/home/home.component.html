@@ -1,151 +1,64 @@
-<!-- Hero Section -->
-<section class="hero">
-  <div class="container">
-    <div class="hero-content">
-      <h1 class="hero-title">Transforme Vidas</h1>
-      <p class="hero-subtitle">
-        Conecte-se com ONGs, orfanatos e casas de repouso para fazer a diferença através do voluntariado
+<section class="hero" style="padding: 6rem 0; background: linear-gradient(to bottom, #eff6ff, #ffffff);">
+  <div class="container grid grid-2" style="align-items: center;">
+    <div class="hero-content text-left">
+      <span style="color: var(--primary); font-weight: 600; text-transform: uppercase; font-size: 0.875rem; letter-spacing: 0.05em;">Plataforma de Voluntariado</span>
+      <h1 style="color: var(--text-main); margin: 1rem 0;">Conecte-se a causas que <span style="color: var(--primary)">mudam o mundo</span></h1>
+      <p style="font-size: 1.25rem; margin-bottom: 2rem; max-width: 500px;">
+        Junte-se a nossa comunidade. Encontre ONGs, participe de projetos e acompanhe o impacto real das suas ações.
       </p>
-      <div class="hero-actions">
-        <button class="btn btn-white" (click)="navigateToOpportunities()">
-          Encontrar Organizações
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M5 12h14M12 5l7 7-7 7"/>
-          </svg>
-        </button>
-        <button class="btn btn-outline">Como Funciona</button>
+      <div style="display: flex; gap: 1rem;">
+        <button class="btn btn-primary" (click)="navigateToOpportunities()">Encontrar Projetos</button>
+        <button class="btn btn-outline">Saiba Mais</button>
       </div>
     </div>
-  </div>
-</section>
-
-<!-- Estatísticas -->
-<section class="stats-section">
-  <div class="container">
-    <div class="stats-grid grid grid-4">
-      @for (stat of stats; track stat.label) {
-        <div class="stat-card">
-          <div class="stat-value">{{ stat.value }}</div>
-          <div class="stat-label">{{ stat.label }}</div>
-        </div>
-      }
+    <div class="hero-image">
+      <img src="https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=800&q=80" alt="Voluntários" style="width: 100%; border-radius: 24px; box-shadow: var(--shadow-lg);">
     </div>
   </div>
 </section>
 
-<!-- Como Você Pode Ajudar -->
-<section class="help-section">
+<section class="section" style="padding: 5rem 0;">
   <div class="container">
-    <h2 class="section-title text-center">Como Você Pode Ajudar</h2>
-    <p class="section-subtitle text-center">
-      Existem diferentes formas de contribuir. Escolha a que mais combina com você.
-    </p>
-    
-    <div class="help-grid grid grid-3">
-      @for (way of helpWays; track way.title) {
-        <div class="help-card">
-          <div class="help-icon" [style.background-color]="way.color">
-            @if (way.icon === 'clock') {
-              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
-                <circle cx="12" cy="12" r="10"/>
-                <path d="M12 6v6l4 2"/>
-              </svg>
-            }
-            @if (way.icon === 'dollar') {
-              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
-                <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
-              </svg>
-            }
-            @if (way.icon === 'gift') {
-              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
-                <path d="M20 12v10H4V12M2 7h20v5H2zM12 22V7M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7zM12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/>
-              </svg>
-            }
-          </div>
-          <h3 class="help-title">{{ way.title }}</h3>
-          <p class="help-description">{{ way.description }}</p>
-          <a href="#" class="help-link">Saiba Mais →</a>
-        </div>
-      }
-    </div>
-  </div>
-</section>
-
-<!-- Onde Você Pode Atuar -->
-<section class="organizations-section">
-  <div class="container">
-    <h2 class="section-title text-center">Onde Você Pode Atuar</h2>
-    <p class="section-subtitle text-center">
-      Conecte-se com diferentes tipos de organizações e encontre a causa que mais toca seu coração.
-    </p>
-    
-    <div class="org-grid grid grid-3">
+    <h2 class="text-center">Explore por Categoria</h2>
+    <div class="grid grid-3" style="margin-top: 3rem;">
       @for (org of orgTypes; track org.title) {
-        <div class="org-card">
-          <div class="org-image-wrapper">
-            <img [src]="org.image" [alt]="org.title" class="org-image">
-            <div class="org-badge">{{ org.count }}</div>
+        <div class="card" style="padding: 2rem; text-align: center; cursor: pointer; border: 1px solid #f1f5f9; background: white;">
+          <div style="width: 64px; height: 64px; background: #eff6ff; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem auto; color: var(--primary);">
+            <svg width="32" height="32" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>
           </div>
-          <div class="org-content">
-            <h3 class="org-title">{{ org.title }}</h3>
-            <p class="org-description">{{ org.description }}</p>
-          </div>
+          <h3>{{ org.title }}</h3>
+          <p>{{ org.description }}</p>
+          <span style="display: inline-block; margin-top: 1rem; color: var(--primary); font-weight: 600;">{{ org.count }} Opções</span>
         </div>
       }
-    </div>
-    
-    <div class="text-center mt-lg">
-      <button class="btn btn-primary" (click)="navigateToOpportunities()">
-        Ver Todas as Organizações
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <path d="M5 12h14M12 5l7 7-7 7"/>
-        </svg>
-      </button>
     </div>
   </div>
 </section>
 
-<!-- Oportunidades em Destaque -->
-@if (getFeaturedOpportunities().length > 0) {
-  <section class="featured-section">
-    <div class="container">
-      <h2 class="section-title text-center">Oportunidades em Destaque</h2>
-      <p class="section-subtitle text-center">
-        Comece sua jornada de voluntariado com estas oportunidades selecionadas.
-      </p>
-      
-      <div class="opportunities-grid grid grid-3">
-        @for (opportunity of getFeaturedOpportunities(); track opportunity.id) {
-          <div class="opportunity-card" (click)="viewOpportunityDetails(opportunity.id)">
-            <div class="opportunity-image-wrapper">
-              <img [src]="opportunity.image" [alt]="opportunity.title" class="opportunity-image">
-            </div>
-            <div class="opportunity-content">
-              <div class="opportunity-category">{{ opportunity.category }}</div>
-              <h3 class="opportunity-title">{{ opportunity.title }}</h3>
-              <p class="opportunity-organization">{{ opportunity.organization }}</p>
-              <p class="opportunity-location">📍 {{ opportunity.location }}</p>
-              <button class="btn btn-primary btn-sm">Ver Detalhes</button>
+<section style="padding: 5rem 0; background: #f8fafc;">
+  <div class="container">
+    <div style="display: flex; justify-content: space-between; align-items: end; margin-bottom: 2rem;">
+      <h2>Oportunidades em Destaque</h2>
+      <a routerLink="/opportunities" class="btn btn-ghost">Ver tudo -></a>
+    </div>
+
+    <div class="grid grid-3">
+      @for (opportunity of getFeaturedOpportunities(); track opportunity.id) {
+        <div class="card opportunity-card" (click)="viewOpportunityDetails(opportunity.id)">
+          <div style="height: 200px; overflow: hidden;">
+            <img [src]="opportunity.image" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s;" class="hover-zoom">
+          </div>
+          <div style="padding: 1.5rem;">
+            <span style="background: #ecfdf5; color: #059669; font-size: 0.75rem; font-weight: 700; padding: 4px 8px; border-radius: 4px; text-transform: uppercase;">{{ opportunity.category }}</span>
+            <h3 style="font-size: 1.25rem; margin-top: 0.5rem;">{{ opportunity.title }}</h3>
+            <p style="font-size: 0.9rem; margin-bottom: 1rem;">{{ opportunity.organization }}</p>
+            <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #f1f5f9; padding-top: 1rem; margin-top: 1rem;">
+              <span style="font-size: 0.875rem; color: var(--text-muted);">📍 {{ opportunity.location }}</span>
+              <span style="font-weight: 600; color: var(--primary);">Candidatar</span>
             </div>
           </div>
-        }
-      </div>
-    </div>
-  </section>
-}
-
-<!-- CTA Final -->
-<section class="cta-section">
-  <div class="container">
-    <div class="cta-content text-center">
-      <svg class="cta-icon" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
-        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
-      </svg>
-      <h2 class="cta-title">Pronto para Fazer a Diferença?</h2>
-      <p class="cta-subtitle">
-        Junte-se a milhares de voluntários que já estão transformando vidas em todo o Brasil.
-      </p>
-      <button class="btn btn-white" (click)="navigateToOpportunities()">Começar Agora</button>
+        </div>
+      }
     </div>
   </div>
 </section>

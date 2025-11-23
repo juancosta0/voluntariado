@@ -1,0 +1,27 @@
+@if (org) {
+  <div class="org-profile-header">
+    <div class="container">
+      <img [src]="org.logo" [alt]="org.name" class="org-avatar" style="width: 100px; height: 100px; margin-bottom: 1rem;">
+      <h1>{{ org.name }}</h1>
+      <p style="max-width: 600px; margin: 0 auto">{{ org.description }}</p>
+
+      <div class="org-stats">
+        <div class="stat-item">
+          <span class="stat-num">{{ org.followers }}</span>
+          <span class="text-muted">Seguidores</span>
+        </div>
+      </div>
+
+      <div style="margin-top: 2rem;">
+        <button class="btn btn-primary">Seguir Organização</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <h3>Sobre Nós</h3>
+    <p>{{ org.fullDescription }}</p>
+    <hr>
+    <p><strong>Localização:</strong> {{ org.location }}</p>
+  </div>
+}

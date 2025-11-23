@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { authGuard } from './core/guards/auth.guard';
 
 const routes: Routes = [
   {
@@ -14,6 +13,11 @@ const routes: Routes = [
   {
     path: 'opportunities',
     loadChildren: () => import('./features/opportunities/opportunities.module').then(m => m.OpportunitiesModule)
+  },
+  // Novo módulo de organizações (inclui Feed e Perfil)
+  {
+    path: 'organizations',
+    loadChildren: () => import('./features/organizations/organizations.module').then(m => m.OrganizationsModule)
   },
   {
     path: '**',
