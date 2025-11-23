@@ -35,30 +35,32 @@
   </div>
 </section>
 
-<section style="padding: 5rem 0; background: #f8fafc;">
-  <div class="container">
-    <div style="display: flex; justify-content: space-between; align-items: end; margin-bottom: 2rem;">
-      <h2>Oportunidades em Destaque</h2>
-      <a routerLink="/opportunities" class="btn btn-ghost">Ver tudo -></a>
-    </div>
+@if (getFeaturedOpportunities().length > 0) {
+  <section style="padding: 5rem 0; background: #f8fafc;">
+    <div class="container">
+      <div style="display: flex; justify-content: space-between; align-items: end; margin-bottom: 2rem;">
+        <h2>Oportunidades em Destaque</h2>
+        <a routerLink="/opportunities" class="btn btn-ghost">Ver tudo -></a>
+      </div>
 
-    <div class="grid grid-3">
-      @for (opportunity of getFeaturedOpportunities(); track opportunity.id) {
-        <div class="card opportunity-card" (click)="viewOpportunityDetails(opportunity.id)">
-          <div style="height: 200px; overflow: hidden;">
-            <img [src]="opportunity.image" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s;" class="hover-zoom">
-          </div>
-          <div style="padding: 1.5rem;">
-            <span style="background: #ecfdf5; color: #059669; font-size: 0.75rem; font-weight: 700; padding: 4px 8px; border-radius: 4px; text-transform: uppercase;">{{ opportunity.category }}</span>
-            <h3 style="font-size: 1.25rem; margin-top: 0.5rem;">{{ opportunity.title }}</h3>
-            <p style="font-size: 0.9rem; margin-bottom: 1rem;">{{ opportunity.organization }}</p>
-            <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #f1f5f9; padding-top: 1rem; margin-top: 1rem;">
-              <span style="font-size: 0.875rem; color: var(--text-muted);">📍 {{ opportunity.location }}</span>
-              <span style="font-weight: 600; color: var(--primary);">Candidatar</span>
+      <div class="grid grid-3">
+        @for (opportunity of getFeaturedOpportunities(); track opportunity.id) {
+          <div class="card opportunity-card" (click)="viewOpportunityDetails(opportunity.id)" style="cursor: pointer;">
+            <div style="height: 200px; overflow: hidden;">
+              <img [src]="opportunity.image" [alt]="opportunity.title" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s;" class="hover-zoom">
+            </div>
+            <div style="padding: 1.5rem;">
+              <span style="background: #ecfdf5; color: #059669; font-size: 0.75rem; font-weight: 700; padding: 4px 8px; border-radius: 4px; text-transform: uppercase;">{{ opportunity.category }}</span>
+              <h3 style="font-size: 1.25rem; margin-top: 0.5rem;">{{ opportunity.title }}</h3>
+              <p style="font-size: 0.9rem; margin-bottom: 1rem; color: var(--text-muted)">{{ opportunity.organization }}</p>
+              <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #f1f5f9; padding-top: 1rem; margin-top: 1rem;">
+                <span style="font-size: 0.875rem; color: var(--text-muted);">📍 {{ opportunity.location }}</span>
+                <span style="font-weight: 600; color: var(--primary);">Ver Detalhes</span>
+              </div>
             </div>
           </div>
-        </div>
-      }
+        }
+      </div>
     </div>
-  </div>
-</section>
+  </section>
+}

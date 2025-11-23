@@ -1,1 +1,43 @@
-<p>opportunity-detail works!</p>
+@if (opportunity(); as opp) {
+  <div class="container" style="padding-top: 3rem; padding-bottom: 4rem;">
+    <div class="grid grid-3">
+      <div style="grid-column: span 2;">
+        <img [src]="opp.image" [alt]="opp.title" style="width: 100%; height: 400px; object-fit: cover; border-radius: var(--radius-lg); margin-bottom: 2rem;">
+
+        <span style="color: var(--primary); font-weight: 600;">{{ opp.category }}</span>
+        <h1 style="margin-top: 0.5rem; margin-bottom: 1rem;">{{ opp.title }}</h1>
+
+        <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem; color: var(--text-muted);">
+          <span>🏢 {{ opp.organization }}</span>
+          <span>📍 {{ opp.location }}</span>
+        </div>
+
+        <div class="card" style="padding: 2rem; margin-bottom: 2rem;">
+          <h3>Sobre a Vaga</h3>
+          <p>{{ opp.description }}</p>
+
+          <h4 style="margin-top: 1.5rem;">Requisitos</h4>
+          <p>{{ opp.requirements }}</p>
+        </div>
+      </div>
+
+      <div>
+        <div class="card" style="padding: 1.5rem; position: sticky; top: 100px;">
+          <h3 style="margin-bottom: 1.5rem;">Resumo</h3>
+
+          <div style="margin-bottom: 1rem;">
+            <span style="display: block; font-size: 0.875rem; color: var(--text-muted);">Compromisso</span>
+            <span style="font-weight: 600;">{{ opp.commitment }}</span>
+          </div>
+
+          <div style="margin-bottom: 1.5rem;">
+            <span style="display: block; font-size: 0.875rem; color: var(--text-muted);">Duração</span>
+            <span style="font-weight: 600;">{{ opp.duration }}</span>
+          </div>
+
+          <button class="btn btn-primary w-full" style="width: 100%;">Quero Participar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+}

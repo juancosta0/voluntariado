@@ -1,1 +1,38 @@
-<p>opportunities-list works!</p>
+<div class="container" style="padding-top: 2rem; padding-bottom: 4rem;">
+  <div style="text-align: center; margin-bottom: 3rem;">
+    <h1>Encontre sua Oportunidade</h1>
+    <p style="max-width: 600px; margin: 0 auto;">Busque por causa, habilidade ou localização e comece a ajudar hoje mesmo.</p>
+
+    <div style="margin-top: 2rem; max-width: 500px; margin-left: auto; margin-right: auto;">
+      <input
+        type="text"
+        placeholder="Buscar oportunidades..."
+        (input)="onSearch($event)"
+        style="width: 100%; padding: 1rem; border-radius: 50px; border: 1px solid #e2e8f0; box-shadow: var(--shadow-sm); font-size: 1rem;"
+      >
+    </div>
+  </div>
+
+  <div class="grid grid-3">
+    @for (opp of opportunities(); track opp.id) {
+      <div class="card opportunity-card" (click)="viewDetails(opp.id)" style="cursor: pointer;">
+        <div style="height: 200px; overflow: hidden;">
+          <img [src]="opp.image" [alt]="opp.title" style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
+        <div style="padding: 1.5rem;">
+          <span style="background: #e0f2fe; color: var(--primary); font-size: 0.75rem; font-weight: 700; padding: 4px 8px; border-radius: 4px;">{{ opp.category }}</span>
+          <h3 style="font-size: 1.25rem; margin-top: 0.5rem; margin-bottom: 0.5rem;">{{ opp.title }}</h3>
+          <p style="font-size: 0.9rem; margin-bottom: 1rem; color: var(--text-muted)">{{ opp.organization }}</p>
+          <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #f1f5f9; padding-top: 1rem; margin-top: 1rem;">
+            <span style="font-size: 0.875rem; color: var(--text-muted);">📍 {{ opp.location }}</span>
+            <button class="btn btn-ghost" style="padding: 0.5rem;">→</button>
+          </div>
+        </div>
+      </div>
+    } @empty {
+      <div style="grid-column: 1/-1; text-align: center; padding: 4rem;">
+        <p>Nenhuma oportunidade encontrada com este termo.</p>
+      </div>
+    }
+  </div>
+</div>
