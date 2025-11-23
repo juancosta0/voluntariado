@@ -1,6 +1,13 @@
 {
   "users": [
-    { "id": 1, "username": "admin", "password": "admin", "name": "Admin User", "email": "admin@demo.com", "avatar": "https://ui-avatars.com/api/?name=Admin+User&background=0D8ABC&color=fff" }
+    {
+      "id": 1,
+      "username": "admin",
+      "password": "admin",
+      "name": "Admin User",
+      "email": "admin@demo.com",
+      "avatar": "https://ui-avatars.com/api/?name=Admin+User&background=0D8ABC&color=fff"
+    }
   ],
   "organizations": [
     {
@@ -8,7 +15,7 @@
       "name": "Instituto Educação para Todos",
       "category": "Educação",
       "description": "Transformando vidas através da educação inclusiva.",
-      "fullDescription": "O Instituto Educação para Todos atua há 10 anos em comunidades carentes, oferecendo reforço escolar, aulas de idiomas e preparação para o vestibular. Nossa missão é garantir que a origem social não defina o destino educacional de uma criança.",
+      "fullDescription": "O Instituto Educação para Todos atua há 10 anos em comunidades carentes, oferecendo reforço escolar, aulas de idiomas e preparação para o vestibular.",
       "location": "São Paulo, SP",
       "image": "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=800&h=400&fit=crop",
       "logo": "https://ui-avatars.com/api/?name=Edu+Todos&background=4169E1&color=fff",
@@ -20,7 +27,7 @@
       "name": "Abrigo Animal Amigos de Patas",
       "category": "Proteção Animal",
       "description": "Resgate, reabilitação e adoção de animais de rua.",
-      "fullDescription": "Dedicamos nossos dias a resgatar animais em situação de risco, oferecendo tratamento veterinário, amor e um lar temporário até encontrarem sua família definitiva.",
+      "fullDescription": "Dedicamos nossos dias a resgatar animais em situação de risco, oferecendo tratamento veterinário, amor e um lar temporário.",
       "location": "Salvador, BA",
       "image": "https://images.unsplash.com/photo-1450778869180-41d0601e046e?w=800&h=400&fit=crop",
       "logo": "https://ui-avatars.com/api/?name=Amigos+Patas&background=7B3FF2&color=fff",
@@ -32,7 +39,7 @@
     {
       "id": 1,
       "organizationId": 1,
-      "content": "Ontem foi dia de formatura da nossa turma de inglês! 🎉 Muito orgulho desses jovens que se dedicaram o ano todo.",
+      "content": "Ontem foi dia de formatura da nossa turma de inglês! 🎉 Muito orgulho desses jovens.",
       "image": "https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=800&q=80",
       "likes": 45,
       "date": "2023-10-25T10:00:00"
@@ -40,7 +47,7 @@
     {
       "id": 2,
       "organizationId": 2,
-      "content": "O Rex encontrou um lar! 🐶 Obrigado a todos que compartilharam nossa campanha. Precisamos de voluntários para a feira de adoção deste sábado.",
+      "content": "O Rex encontrou um lar! 🐶 Obrigado a todos que compartilharam nossa campanha.",
       "image": "https://images.unsplash.com/photo-1548199973-03cce0bbc87b?w=800&q=80",
       "likes": 120,
       "date": "2023-10-24T15:30:00"
@@ -49,21 +56,21 @@
   "opportunities": [
     {
       "id": 1,
-      "organizationId": 1,
-      "title": "Professor de Matemática Voluntário",
+      "title": "Apoio Educacional",
+      "organization": "Instituto Educação para Todos",
       "category": "Educação",
-      "image": "https://images.unsplash.com/photo-1509062522246-3755977927d7?w=800",
+      "image": "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=800",
       "location": "São Paulo, SP",
-      "organization": "Instituto Educação para Todos"
+      "organizationId": 1
     },
     {
       "id": 2,
-      "organizationId": 2,
-      "title": "Passeador de Cães",
+      "title": "Cuidado Animal",
+      "organization": "Abrigo Animal Amigos de Patas",
       "category": "Animais",
-      "image": "https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?w=800",
+      "image": "https://images.unsplash.com/photo-1450778869180-41d0601e046e?w=800",
       "location": "Salvador, BA",
-      "organization": "Abrigo Animal Amigos de Patas"
+      "organizationId": 2
     }
   ],
   "applications": []
