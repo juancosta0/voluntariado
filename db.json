@@ -1,0 +1,92 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "username": "admin",
+      "password": "admin",
+      "name": "Administrador",
+      "email": "admin@conectavoluntario.com.br"
+    }
+  ],
+  "opportunities": [
+    {
+      "id": 1,
+      "title": "Apoio Educacional em Comunidade",
+      "organization": "Instituto Educação para Todos",
+      "category": "Educação",
+      "type": "ONG",
+      "description": "Ajude crianças e adolescentes com reforço escolar e atividades educativas em comunidades carentes.",
+      "image": "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=800&h=400&fit=crop",
+      "location": "São Paulo, SP",
+      "duration": "3 meses",
+      "commitment": "4 horas/semana",
+      "requirements": "Ensino médio completo, paciência e vontade de ensinar"
+    },
+    {
+      "id": 2,
+      "title": "Companhia para Idosos",
+      "organization": "Casa de Repouso Vida Plena",
+      "category": "Assistência Social",
+      "type": "Casa de Repouso",
+      "description": "Faça companhia aos nossos idosos, conversando, lendo livros ou participando de atividades recreativas.",
+      "image": "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=800&h=400&fit=crop",
+      "location": "Rio de Janeiro, RJ",
+      "duration": "Flexível",
+      "commitment": "2 horas/semana",
+      "requirements": "Empatia, paciência e disponibilidade"
+    },
+    {
+      "id": 3,
+      "title": "Atividades Recreativas com Crianças",
+      "organization": "Orfanato Esperança",
+      "category": "Infância",
+      "type": "Orfanato",
+      "description": "Organize e participe de atividades lúdicas, esportivas e culturais com crianças em situação de vulnerabilidade.",
+      "image": "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=800&h=400&fit=crop",
+      "location": "Belo Horizonte, MG",
+      "duration": "6 meses",
+      "commitment": "6 horas/semana",
+      "requirements": "Maior de 18 anos, criatividade e energia"
+    },
+    {
+      "id": 4,
+      "title": "Distribuição de Alimentos",
+      "organization": "Banco de Alimentos Solidário",
+      "category": "Combate à Fome",
+      "type": "ONG",
+      "description": "Auxilie na triagem, organização e distribuição de alimentos para famílias em situação de insegurança alimentar.",
+      "image": "https://images.unsplash.com/photo-1593113598332-cd288d649433?w=800&h=400&fit=crop",
+      "location": "Curitiba, PR",
+      "duration": "Contínuo",
+      "commitment": "8 horas/mês",
+      "requirements": "Disponibilidade aos finais de semana"
+    },
+    {
+      "id": 5,
+      "title": "Apoio Psicológico Voluntário",
+      "organization": "Centro de Valorização da Vida",
+      "category": "Saúde Mental",
+      "type": "ONG",
+      "description": "Ofereça apoio emocional e escuta ativa para pessoas em momentos de crise ou vulnerabilidade emocional.",
+      "image": "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=800&h=400&fit=crop",
+      "location": "Porto Alegre, RS",
+      "duration": "12 meses",
+      "commitment": "4 horas/semana",
+      "requirements": "Formação em Psicologia ou áreas afins, curso de capacitação obrigatório"
+    },
+    {
+      "id": 6,
+      "title": "Cuidado com Animais Abandonados",
+      "organization": "Abrigo Animal Amigos de Patas",
+      "category": "Proteção Animal",
+      "type": "ONG",
+      "description": "Ajude no cuidado diário de cães e gatos resgatados, incluindo alimentação, limpeza e socialização.",
+      "image": "https://images.unsplash.com/photo-1450778869180-41d0601e046e?w=800&h=400&fit=crop",
+      "location": "Salvador, BA",
+      "duration": "Flexível",
+      "commitment": "3 horas/semana",
+      "requirements": "Amor por animais e disponibilidade"
+    }
+  ],
+  "applications": []
+}
