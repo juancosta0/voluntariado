@@ -1,0 +1,100 @@
+<p>register works!</p>
+<div class="register-container">
+  <div class="register-card card">
+    <div class="register-header">
+      <h2>Crie sua Conta</h2>
+      <p>Junte-se à rede de solidariedade</p>
+    </div>
+
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+
+      <div class="form-group type-selector">
+        <label>Eu sou:</label>
+        <div class="radio-group">
+          <label>
+            <input type="radio" formControlName="type" value="volunteer">
+            <span>Voluntário</span>
+          </label>
+          <label>
+            <input type="radio" formControlName="type" value="ong">
+            <span>ONG</span>
+          </label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Nome Completo (ou Responsável)</label>
+        <input type="text" formControlName="name" class="form-control">
+      </div>
+
+      <div class="grid grid-2">
+        <div class="form-group">
+          <label>Usuário (Login)</label>
+          <input type="text" formControlName="username" class="form-control">
+        </div>
+        <div class="form-group">
+          <label>Senha</label>
+          <input type="password" formControlName="password" class="form-control">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Email</label>
+        <input type="email" formControlName="email" class="form-control">
+      </div>
+
+      @if (isOng()) {
+        <div class="ong-fields">
+          <h3 style="margin: 1.5rem 0 1rem 0; font-size: 1.1rem;">Dados da Organização</h3>
+
+          <div class="form-group">
+            <label>Nome da ONG</label>
+            <input type="text" formControlName="orgName" class="form-control" placeholder="Ex: Instituto...">
+          </div>
+
+          <div class="grid grid-2">
+            <div class="form-group">
+              <label>Categoria</label>
+              <select formControlName="category" class="form-control">
+                <option value="">Selecione...</option>
+                <option value="Educação">Educação</option>
+                <option value="Animais">Animais</option>
+                <option value="Saúde">Saúde</option>
+                <option value="Alimentação">Alimentação</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Cidade/Estado</label>
+              <input type="text" formControlName="location" class="form-control" placeholder="Ex: São Paulo, SP">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Descrição Breve</label>
+            <textarea formControlName="description" class="form-control" rows="3"></textarea>
+          </div>
+
+          <div class="form-group">
+            <label style="display: block; margin-bottom: 0.5rem;">Do que vocês precisam?</label>
+            <div class="needs-grid">
+              @for (need of availableNeeds; track need) {
+                <label class="checkbox-item">
+                  <input type="checkbox" (change)="onNeedChange($event, need)">
+                  {{ need }}
+                </label>
+              }
+            </div>
+          </div>
+        </div>
+      }
+
+      <button type="submit" class="btn btn-primary w-full mt-md" [disabled]="registerForm.invalid || isLoading()">
+        @if (isLoading()) { Cadastrando... } @else { Cadastrar }
+      </button>
+    </form>
+
+    <div class="text-center mt-md">
+      <p>Já tem conta? <a routerLink="/auth/login">Entrar</a></p>
+    </div>
+  </div>
+</div>

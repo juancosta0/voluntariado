@@ -1,29 +1,43 @@
-<div class="container feed-container">
-  <h2>Meu Feed Solidário</h2>
-  <p class="mb-lg">Acompanhe o impacto das organizações que você segue.</p>
+<div class="container" style="padding-top: 2rem; padding-bottom: 4rem;">
+  <h2 style="margin-bottom: 0.5rem;">Meu Feed Solidário</h2>
+  <p class="text-muted">Acompanhe as novidades das organizações.</p>
 
-  @for (post of feed(); track post.id) {
-    <article class="feed-post card">
-      <div class="post-header">
-        <img [src]="post.organization?.logo" [alt]="post.organization?.name" class="org-avatar">
-        <div>
-          <h4 style="margin: 0">{{ post.organization?.name }}</h4>
-          <span class="post-meta">{{ post.date | date:'dd MMM yyyy' }}</span>
+  <div class="feed-grid">
+    @for (post of feed(); track post.id) {
+      <article class="feed-post card">
+        <div class="post-header">
+          <img [src]="post.organization?.logo" [alt]="post.organization?.name" class="org-avatar">
+          <div style="overflow: hidden;">
+            <h4 style="margin: 0; font-size: 0.95rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+              {{ post.organization?.name }}
+            </h4>
+            <span style="font-size: 0.75rem; color: var(--text-light);">{{ post.date | date:'dd MMM' }}</span>
+          </div>
         </div>
-        <button class="btn btn-ghost" style="margin-left: auto" [routerLink]="['/organizations', post.organizationId]">Ver Perfil</button>
+
+        <div class="post-content">
+          <p class="post-text">{{ post.content }}</p>
+
+          @if (post.image) {
+            <div class="post-image-wrapper">
+              <img [src]="post.image" class="post-image" alt="Post image">
+            </div>
+          }
+        </div>
+
+        <div class="post-actions">
+          <button class="btn btn-ghost btn-like" style="padding: 0;">
+            ❤️ {{ post.likes }}
+          </button>
+          <button class="btn btn-ghost" style="font-size: 0.875rem;" [routerLink]="['/organizations', post.organizationId]">
+            Ver Perfil
+          </button>
+        </div>
+      </article>
+    } @empty {
+      <div style="grid-column: 1/-1; text-align: center; padding: 3rem;">
+        <p>Nenhuma novidade por enquanto.</p>
       </div>
-
-      <p>{{ post.content }}</p>
-
-      @if (post.image) {
-        <img [src]="post.image" class="post-image" alt="Imagem do post">
-      }
-
-      <div class="post-actions" style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid #eee; display: flex; gap: 1rem;">
-        <button class="btn btn-ghost">❤️ {{ post.likes }} Curtidas</button>
-      </div>
-    </article>
-  } @empty {
-    <p>Nenhuma novidade por enquanto.</p>
-  }
+    }
+  </div>
 </div>

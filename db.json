@@ -6,7 +6,7 @@
       "password": "admin",
       "name": "Admin User",
       "email": "admin@demo.com",
-      "avatar": "https://ui-avatars.com/api/?name=Admin+User&background=0D8ABC&color=fff"
+      "type": "admin"
     }
   ],
   "organizations": [
@@ -14,64 +14,50 @@
       "id": 1,
       "name": "Instituto Educação para Todos",
       "category": "Educação",
-      "description": "Transformando vidas através da educação inclusiva.",
-      "fullDescription": "O Instituto Educação para Todos atua há 10 anos em comunidades carentes, oferecendo reforço escolar, aulas de idiomas e preparação para o vestibular.",
+      "description": "Transformando vidas através da educação.",
+      "fullDescription": "O Instituto Educação para Todos atua há 10 anos em comunidades carentes.",
       "location": "São Paulo, SP",
-      "image": "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=800&h=400&fit=crop",
+      "image": "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=800",
       "logo": "https://ui-avatars.com/api/?name=Edu+Todos&background=4169E1&color=fff",
-      "contact": "contato@edutodos.org",
+      "needs": ["Voluntários", "Material Escolar"],
       "followers": 1250
     },
     {
       "id": 2,
       "name": "Abrigo Animal Amigos de Patas",
       "category": "Proteção Animal",
-      "description": "Resgate, reabilitação e adoção de animais de rua.",
-      "fullDescription": "Dedicamos nossos dias a resgatar animais em situação de risco, oferecendo tratamento veterinário, amor e um lar temporário.",
+      "description": "Resgate e adoção de animais de rua.",
+      "fullDescription": "Dedicamos nossos dias a resgatar animais em situação de risco.",
       "location": "Salvador, BA",
-      "image": "https://images.unsplash.com/photo-1450778869180-41d0601e046e?w=800&h=400&fit=crop",
+      "image": "https://images.unsplash.com/photo-1450778869180-41d0601e046e?w=800",
       "logo": "https://ui-avatars.com/api/?name=Amigos+Patas&background=7B3FF2&color=fff",
-      "contact": "adote@amigosdepatas.org",
+      "needs": ["Ração", "Dinheiro", "Veterinários"],
       "followers": 3400
     }
   ],
   "posts": [
-    {
-      "id": 1,
-      "organizationId": 1,
-      "content": "Ontem foi dia de formatura da nossa turma de inglês! 🎉 Muito orgulho desses jovens.",
-      "image": "https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=800&q=80",
-      "likes": 45,
-      "date": "2023-10-25T10:00:00"
-    },
-    {
-      "id": 2,
-      "organizationId": 2,
-      "content": "O Rex encontrou um lar! 🐶 Obrigado a todos que compartilharam nossa campanha.",
-      "image": "https://images.unsplash.com/photo-1548199973-03cce0bbc87b?w=800&q=80",
-      "likes": 120,
-      "date": "2023-10-24T15:30:00"
-    }
+    { "id": 1, "organizationId": 1, "content": "Formatura da turma de inglês! 🎉", "image": "https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=800", "likes": 45, "date": "2023-10-25T10:00:00" },
+    { "id": 2, "organizationId": 2, "content": "O Rex encontrou um lar! 🐶", "image": "https://images.unsplash.com/photo-1548199973-03cce0bbc87b?w=800", "likes": 120, "date": "2023-10-24T15:30:00" },
+    { "id": 3, "organizationId": 1, "content": "Precisamos de doações de livros infantis.", "image": "https://images.unsplash.com/photo-1512820790803-83ca734da794?w=800", "likes": 32, "date": "2023-10-23T09:00:00" },
+    { "id": 4, "organizationId": 2, "content": "Dia de banho e tosa no abrigo!", "image": "https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?w=800", "likes": 89, "date": "2023-10-22T14:00:00" },
+    { "id": 5, "organizationId": 1, "content": "Aula de reforço de matemática.", "image": "https://images.unsplash.com/photo-1509062522246-3755977927d7?w=800", "likes": 55, "date": "2023-10-21T11:00:00" },
+    { "id": 6, "organizationId": 2, "content": "Novos gatinhos chegaram precisando de lar.", "image": "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=800", "likes": 210, "date": "2023-10-20T16:00:00" },
+    { "id": 7, "organizationId": 1, "content": "Reunião com novos voluntários.", "image": "https://images.unsplash.com/photo-1517048676732-d65bc937f952?w=800", "likes": 40, "date": "2023-10-19T10:00:00" },
+    { "id": 8, "organizationId": 2, "content": "Campanha de vacinação concluída.", "image": "https://images.unsplash.com/photo-1628009368231-7603352984c3?w=800", "likes": 150, "date": "2023-10-18T13:00:00" },
+    { "id": 9, "organizationId": 1, "content": "Horta comunitária florescendo.", "image": "https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?w=800", "likes": 67, "date": "2023-10-17T08:00:00" },
+    { "id": 10, "organizationId": 2, "content": "Precisamos de jornais velhos para forrar as gaiolas.", "image": "https://images.unsplash.com/photo-1581888227599-779811985203?w=800", "likes": 25, "date": "2023-10-16T12:00:00" }
   ],
   "opportunities": [
-    {
-      "id": 1,
-      "title": "Apoio Educacional",
-      "organization": "Instituto Educação para Todos",
-      "category": "Educação",
-      "image": "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=800",
-      "location": "São Paulo, SP",
-      "organizationId": 1
-    },
-    {
-      "id": 2,
-      "title": "Cuidado Animal",
-      "organization": "Abrigo Animal Amigos de Patas",
-      "category": "Animais",
-      "image": "https://images.unsplash.com/photo-1450778869180-41d0601e046e?w=800",
-      "location": "Salvador, BA",
-      "organizationId": 2
-    }
+    { "id": 1, "title": "Apoio Educacional", "organization": "Instituto Educação", "category": "Educação", "image": "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=800", "location": "São Paulo, SP", "organizationId": 1 },
+    { "id": 2, "title": "Cuidado Animal", "organization": "Amigos de Patas", "category": "Animais", "image": "https://images.unsplash.com/photo-1450778869180-41d0601e046e?w=800", "location": "Salvador, BA", "organizationId": 2 },
+    { "id": 3, "title": "Distribuição de Sopa", "organization": "Sopa Solidária", "category": "Alimentação", "image": "https://images.unsplash.com/photo-1547592180-85f173990554?w=800", "location": "Rio de Janeiro, RJ", "organizationId": 3 },
+    { "id": 4, "title": "Professor de Música", "organization": "Sons do Amanhã", "category": "Cultura", "image": "https://images.unsplash.com/photo-1511379938547-c1f69419868d?w=800", "location": "Recife, PE", "organizationId": 4 },
+    { "id": 5, "title": "Psicólogo Voluntário", "organization": "Mente Sã", "category": "Saúde", "image": "https://images.unsplash.com/photo-1527613426441-4da17471b66d?w=800", "location": "Curitiba, PR", "organizationId": 5 },
+    { "id": 6, "title": "Limpeza de Praias", "organization": "EcoMar", "category": "Meio Ambiente", "image": "https://images.unsplash.com/photo-1618477461853-5f8dd68aa395?w=800", "location": "Florianópolis, SC", "organizationId": 6 },
+    { "id": 7, "title": "Contador de Histórias", "organization": "Hospital Infantil", "category": "Saúde", "image": "https://images.unsplash.com/photo-1532012197267-da84d127e765?w=800", "location": "Belo Horizonte, MG", "organizationId": 7 },
+    { "id": 8, "title": "Reforma de Casas", "organization": "Teto Brasil", "category": "Habitação", "image": "https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=800", "location": "Fortaleza, CE", "organizationId": 8 },
+    { "id": 9, "title": "Mentoria de Jovens", "organization": "Futuro Profissional", "category": "Educação", "image": "https://images.unsplash.com/photo-1521791136064-7986c2920216?w=800", "location": "Brasília, DF", "organizationId": 9 },
+    { "id": 10, "title": "Jardinagem Urbana", "organization": "Cidade Verde", "category": "Meio Ambiente", "image": "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=800", "location": "Porto Alegre, RS", "organizationId": 10 }
   ],
   "applications": []
 }
